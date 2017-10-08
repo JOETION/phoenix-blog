@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.snow</groupId>
+    <artifactId>phoenix-blog-app</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+
+    <packaging>pom</packaging>
+    <parent>
+        <groupId>com.snow</groupId>
+        <artifactId>phoenix-blog</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+
+    <modules>
+        <module>phoenix-blog-app-api</module>
+        <module>phoenix-blog-app-core</module>
+        <module>phoenix-blog-app-dao</module>
+        <module>phoenix-blog-app-service</module>
+        <module>phoenix-blog-app-web</module>
+    </modules>
+
+
+</project>
