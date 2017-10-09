@@ -2,7 +2,7 @@
 <!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
 <generatorConfiguration>
-    <context id="phoenix-blog" targetRuntime="MyBatis3">
+    <context id="phoenix_blog" targetRuntime="MyBatis3">
         <property name="autoDelimitKeywords" value="true"/>
         <property name="beginningDelimiter" value="`"/>
         <property name="endingDelimiter" value="`"/>
@@ -12,11 +12,12 @@
             <property name="javaFileEncoding" value="UTF-8"/>
         </commentGenerator>
 
+        <!--数据库没有密码时，password字段值为空就好-->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://127.0.0.1:8306/blog" userId="root"
+                        connectionURL="jdbc:mysql://127.0.0.1:8806/phoenix_blog" userId="root"
                         password="123456"/>
 
-        <javaModelGenerator targetPackage="com.snow.phoenix.blog.app.model"
+        <javaModelGenerator targetPackage="com.snow.phoenix.blog.app.core.model"
                             targetProject="../phoenix-blog-app-core/src/main/java">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
@@ -27,17 +28,41 @@
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
 
-        <javaClientGenerator targetPackage="com.kom.phoenix.blog.app.mapper"
+        <javaClientGenerator targetPackage="com.snow.phoenix.blog.app.dao.mapper"
                              targetProject="src/main/java" type="XMLMAPPER">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
 
         <!--下面是需要生成的表名-->
-        <table tableName="users" catalog="phoenix-blog">
+        <table tableName="users" catalog="phoenix_blog">
             <generatedKey column="id" sqlStatement="MySql"
                           identity="true"/>
         </table>
-
+        <table tableName="blog" catalog="phoenix_blog">
+            <generatedKey column="id" sqlStatement="MySql"
+                          identity="true"/>
+        </table>
+        <table tableName="blog_comment" catalog="phoenix_blog">
+            <generatedKey column="id" sqlStatement="MySql"
+                          identity="true"/>
+        </table>
+        <table tableName="live" catalog="phoenix_blog">
+            <generatedKey column="id" sqlStatement="MySql"
+                          identity="true"/>
+        </table>
+        <table tableName="live_comment" catalog="phoenix_blog">
+            <generatedKey column="id" sqlStatement="MySql"
+                          identity="true"/>
+        </table>
+        <table tableName="message_board" catalog="phoenix_blog">
+            <generatedKey column="id" sqlStatement="MySql"
+                          identity="true"/>
+        </table>
+        <table tableName="others" catalog="phoenix_blog">
+            <generatedKey column="id" sqlStatement="MySql"
+                          identity="true"/>
+        </table>
+        <table tableName="user_detail" catalog="phoenix_blog"></table>
 
     </context>
 </generatorConfiguration>

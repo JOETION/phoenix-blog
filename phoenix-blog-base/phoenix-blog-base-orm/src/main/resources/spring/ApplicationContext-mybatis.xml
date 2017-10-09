@@ -15,8 +15,7 @@
         <property name="dataSource" ref="dataSource"/>
         <property name="mapperLocations">
             <array>
-                <value>classpath*:mybatis/sqlmap/phoenix-blog/*.xml</value>
-                <value>classpath*:mybatis/sqlmap/phoenix-blog-extend/*.xml</value>
+                <value>classpath*:mybatis/sqlmap/phoenix_blog/*.xml</value>
             </array>
         </property>
     </bean>
@@ -25,7 +24,7 @@
     <!-- Mapper接口所在包名，Spring會自動查找其下的Mapper -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
-        <property name="basePackage" value="com.snow.phoenix.blog.app.mapper.phoenix-blog,com.snow.phoenix.blog.app.mapper.phoenix-blog-extend"/>
+        <property name="basePackage" value="com.snow.phoenix.blog.app.dao.mapper.phoenix_blog"/>
     </bean>
 
     <util:properties id="jdbc" location="classpath:jdbc.properties"/>
